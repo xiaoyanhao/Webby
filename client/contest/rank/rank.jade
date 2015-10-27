@@ -1,0 +1,21 @@
+template(name='contest_rank')
+  .contest-rank
+    table
+      thead
+        tr
+          th 排名
+          th 用户名
+          th 提交数
+          th 解题数
+          th 分数
+      tbody
+        each rank_item in rank_items
+          tr
+            td.rank #{rank_item.rank}
+            td
+              .avatar
+                img(src='#{rank_item.avatar}')
+              .username #{rank_item.username}
+            td #{rank_item.submit_num}
+            td #{rank_item.solve_num}
+            td #{rank_item.score}

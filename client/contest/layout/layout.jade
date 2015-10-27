@@ -1,0 +1,14 @@
+template(name='contest_layout')
+  .contest-layout
+    .outer-wrapper
+      ul.my-tab
+        li.overview.selected
+          a(href='#') 概要
+        li.problem
+          a(href='#') 问题
+        li.rank
+          a(href='#') 排名
+
+      .inner-wrapper.overview
+        +contest_overview
+        +contest_rank
