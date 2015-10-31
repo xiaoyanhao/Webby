@@ -1,0 +1,84 @@
+//- template(name="webby_navbar")
+//-   nav
+//-     .webby-ranklist-nav.nav-wrapper 
+//-       ul#nav-mobile
+//-         li ranklist
+
+
+
+template(name="webby_ranklist")
+  //- +webby_navbar
+  .webby-ranklist.main-container.collapsed
+    .row
+      .col.s12
+        +webby_ranklist_personal
+        +webby_ranklist_container
+
+template(name="webby_ranklist_personal")
+  .ranklist-personal.card-panel.col.s10
+    .ranklist-personal-avatar.col.s2
+      img.circle.responsive-img(src="#{personal_info.avatar}" alt="")
+    .ranklist-personal-level.col.s2
+      ul
+        li.username #{personal_info.username}
+        li.userlevel.chip
+          i.fa.fa-vimeo 
+          span level 7
+        li.usericon.chip
+          i.fa.fa-copyright 
+          span 233
+    .ranklist-personal-info.col.s7
+      table.centered
+        thead
+          tr
+            th(data-field="ranklist") 我的积分
+            th(data-field="username") 我的排名
+            th(data-field="problemnum") 解题数
+        tbody
+          tr
+            td #{personal_info.grade}
+            td #{personal_info.place}
+            td #{personal_info.problemnum}
+
+  
+
+template(name="webby_ranklist_container")
+  .ranklist-container.col.s12
+    table.highlight.centered.bordered.center.col.s10
+      thead
+        tr
+          th.place(data-field='place') 排名
+          th.username(data-field="username") 用户名
+          th.personalInfo(data-field="personal-info") 个人介绍
+          th.problemnum(data-field="problemnum") 解题数
+          th.grade(data-field="grade") 总积分
+      tbody
+        each ranklist_item in ranklist_items
+          tr
+            td.userrank #{ranklist_item.place}
+            td 
+              .avatar
+                img.circle.responsive-img(src="#{ranklist_item.avatar}" alt="")
+              .username #{ranklist_item.username}
+
+            td #{ranklist_item.personalInfo}
+            td #{ranklist_item.problemnum}
+            td #{ranklist_item.grade}
+    .col.s12       
+      ul.pagination
+        li.disabled
+          a(href="#!") 
+            i.fa.fa-angle-left
+        li.active
+          a(href="#!") 1
+        li.waves-effect
+          a(href="#!") 2
+        li.waves-effect
+          a(href="#!") 3
+        li.waves-effect
+          a(href="#!") 4
+        li.waves-effect
+          a(href="#!") 5
+        li.waves-effect
+          a(href="#!") 
+            i.fa.fa-angle-right

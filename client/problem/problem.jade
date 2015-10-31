@@ -1,0 +1,77 @@
+template(name='webby_problem')
+
+	+webby_sidebar
+	.webby-problem.main-container.collapsed
+		+webby_topbar(title='题目库')
+		.webby-problem-container
+			+webby_problem_nav
+			+webby_problem_body
+			
+template(name='webby_problem_nav')
+	.webby-problem-nav
+		.webby-problem-nav-header
+			ul
+				li 系统题目
+				li 用户问答
+
+		.webby-problem-nav-tag
+			.clearfix
+				span 分类：
+				.tags
+					ul
+						li.classification.active 全部
+						li.classification HTML/CSS
+						li.classification JavaScript
+						li.classification CSS3
+						li.classification HTML5
+						li.classification jQuery
+						li.classification AngularJS
+						li.classification Bootstrap
+						li.classification Meteor
+						li.classification 前端工具
+			.clearfix
+				span 难度：
+				.tags.difficulty
+					ul
+						li.difficulty 全部
+						li.difficulty 入门
+						li.difficulty 进阶
+						li.difficulty 高级
+		
+		.webby-problem-nav-tool-bar
+			ul
+				li 最新
+				li 最热
+				li.right 隐藏已完成题目
+
+template(name='webby_problem_body')
+	.webby-problem-body
+		//- 题目区
+		.webby-problem-list
+			ul
+				each problems
+					li.webby-problem-item
+						img.cover(src=cover)
+						p.title {{title}}
+						p.tips {{tips}}
+						p.number {{number}}人通过
+		//- 页码
+
+		.webby-problem-pagination
+			ul.pagination
+				li.waves-effect
+					a(href='#!')
+						i.fa.fa-angle-left
+				li.active
+					a(href='#!') 1
+				li.waves-effect
+					a(href='#!') 2
+				li.waves-effect
+					a(href='#!') 3
+				li.waves-effect
+					a(href='#!') 4
+				li.waves-effect
+					a(href='#!') 5
+				li.waves-effect
+					a(href='#!')
+						i.fa.fa-angle-right

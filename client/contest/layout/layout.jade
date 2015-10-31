@@ -1,0 +1,20 @@
+template(name='contest_layout')
+
+  +webby_sidebar
+  .contest-layout.main-container.collapsed
+    .header
+      h4.contest-title Webby年度挑战赛
+
+    .outer-wrapper
+      ul.tabs
+        li.overview.tab.active
+          a(href='#') 概要
+        li.rank.tab
+          a(href='#') 排名
+        li.submit.tab
+          a(href='#') 提交
+
+      .inner-wrapper.overview
+        +contest_overview
+        +contest_rank
+        +contest_submit
