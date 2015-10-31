@@ -1,13 +1,13 @@
-template(name="webby_navbar")
-  nav
-    .webby-ranklist-nav.nav-wrapper 
-      ul#nav-mobile
-        li ranklist
+//- template(name="webby_navbar")
+//-   nav
+//-     .webby-ranklist-nav.nav-wrapper 
+//-       ul#nav-mobile
+//-         li ranklist
 
 
 
 template(name="webby_ranklist")
-  +webby_navbar
+  //- +webby_navbar
   .webby-ranklist
     .row
       .col.s12
@@ -15,7 +15,7 @@ template(name="webby_ranklist")
         +webby_ranklist_container
 
 template(name="webby_ranklist_personal")
-  .ranklist-personal.card-panel.col.s8
+  .ranklist-personal.card-panel.col.s10
     .ranklist-personal-avatar.col.s2
       img.circle.responsive-img(src="/images/default01.png" alt="")
     .ranklist-personal-level.col.s2
@@ -44,7 +44,7 @@ template(name="webby_ranklist_personal")
 
 template(name="webby_ranklist_container")
   .ranklist-container.col.s12
-    table.highlight.centered.bordered.center.col.s8
+    table.highlight.centered.bordered.center.col.s10
       thead
         tr
           th.place(data-field='place') 排名

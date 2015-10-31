@@ -1,3 +1,43 @@
 .webby-home
   width: 100%
   height: 100%
+  padding-left: 240px
+  .webby-home-index
+    padding: 50px
+
+    .slider
+      .slides
+        .slide_problem
+          background-color: rgb(64, 20, 69)
+          .caption
+            top: 55%
+
+        .slide_contest
+          background-color: rgb(50, 208, 150)
+          .caption
+            top: 0
+
+        .slide_ranklist
+          background-color: rgb(168, 55, 33)
+          .caption
+            left: 2%
+
+        .slide_career
+          background-color: #00bcd4
+          .caption
+            top: 10%
+
+        img
+          background-size: contain
+          background-repeat: no-repeat
+          background-position: center bottom
+
+      .indicator-item.active
+        background-color: #ff5252
+
+
+.main-container
+  &.expanded
+    padding-left: 50px
+  &.collapsed
+    padding-left: 240px

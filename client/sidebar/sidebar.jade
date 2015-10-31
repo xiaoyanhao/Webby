@@ -3,46 +3,50 @@ template(name='webby_sidebar')
     ul#webby-sidebar.side-nav.fixed
       +webby_sidebar_items
     a.button-collapse.top-nav(href='#' data-activates='webby-sidebar')
-      i.fa.fa-bars.fa-2x
+      i.fa.fa-bars.fa-2x.black-text
 
 template(name='webby_sidebar_items')
   li.index.red.accent-2
     .expanded-index
-      h1.name Webby
-      p.summary 前端开发专业化评测平台
-      .collapse-sidebar
-        a(href='#')
-          i.fa.fa-angle-left
+      a.logo.hoverable(href='/')
+      h4.name Webby
+      a.collapse-sidebar(href='#')
+        i.fa.fa-angle-left
     .collapsed-index
-      a.white-text(href='/') W
-      .expand-sidebar      
-        a(href='#')
-          i.fa.fa-angle-right
+      a.logo.hoverable(href='/')
+      a.expand-sidebar(href='#')
+        i.fa.fa-angle-right
 
   li.profile
     a(href='/profile' title='个人信息')
       i.fa.fa-user
       span Max
+
   li.problem
     a(href='/problem' title='题目库')
       i.fa.fa-css3
       span 题目库
+
   li.contest
     a(href='/contest' title='竞赛区')
       i.fa.fa-trophy
       span 竞赛区
+
   li.ranklist
     a(href='/ranklist' title='排行榜')
       i.fa.fa-list-ol
       span 排行榜
+
   li.career
     a(href='/career' title='工作机会')
       i.fa.fa-briefcase
-      span 工作机会
+      span 职业场
+
   li.signin.hide
     a(href='#signin' title='登入')
       i.fa.fa-sign-in
       span 登入
+
   li.signout
     a(href='/signout' title='登出')
       i.fa.fa-sign-out
