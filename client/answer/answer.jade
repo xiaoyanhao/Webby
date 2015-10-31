@@ -55,7 +55,7 @@ template(name='webby_answer_mysolution')
               a(href="#editor-css") CSS
             li.tab.col.s3
               a(href="#editor-js") JavaScript
-            li.tab.col.s3
+            li.tab.col.s3.preview
               a(href="#preview") 预览
 
         #editor-html.col.s12
@@ -68,7 +68,6 @@ template(name='webby_answer_mysolution')
           +EditorPage(mode='3' idName='javascript')
 
         #preview.col.s12
-          p 预览
           
         .my-sulotion-footer
           a.btn.waves-effect.waves-light.submit 提交

@@ -16,7 +16,6 @@ Template['webby_answer_mysolution'].on-rendered !->
 
 Template['EditorPage'].helpers do
   idname: ->
-    console.log @idName
     @idName
 
 
@@ -29,7 +28,7 @@ Template['EditorPage'].helpers do
     else
       mode = 'javascript'
 
-    console.log mode
+    # console.log mode
 
     option =
       theme: 'paraiso-dark'
@@ -38,8 +37,69 @@ Template['EditorPage'].helpers do
       mode: mode
 
   editorCode: ->
-    "Talk is cheap, show me the code!"
+    console.log @
+    if @idName is "html"
+      '<div><p> webby is good! </p></div>'
+    else if @idName is 'css'
+      'div {
+        width: 100px;
+        height: 100px;
+        background: blue;
+      }
+      p {
+        font-size: 20px
+      }'
+    else if @idName is 'javascript'
+      # '(function() {
+      #   alert("webby is good!");
+      # })()'
+      "Talk is cheap, show me the code!"
 
 Template['webby_answer_mysolution'].events do
   'click .full-screen': !->
     Template.instance!.$('.webby-answer-mysolution').toggle-class 'my-solution-full-screen'
+
+  'click .webby-answer-mysolution .my-solution ul li.preview': !->
+    preview = Template.instance().$("\#preview")
+    preview.children!remove!
+    
+    html = $("\#html").val()
+    css = $("\#css").val()
+    js = $("\#javascript").val()
+
+    css = '.my-answer ' + css 
+    css1 = css.replace /}/ig, '} .my-answer '
+    css2 = css.replace /\n/ig, ''
+    css3 = css2.replace /\t/ig, ''
+
+    console.log css
+    console.log css1
+    console.log css2
+    console.log css3
+
+
+    # console.log html, css, js
+
+    div = document.createElement("div")
+    div.className = 'my-answer'
+    div.innerHTML = html
+
+    console.log div
+
+    style = document.createElement("style")
+    style.innerHTML = css1
+
+    console.log style
+
+    script = document.createElement("script")
+    script.innerHTML = js
+
+    console.log script
+    
+    preview.append div
+    preview.append style
+    preview.append script
+
+
+
+
