@@ -4,13 +4,14 @@ template(name='webby_contest')
       h3.area-title 竞赛区
       .area-describe 以代码为剑，杀出一片天地
 
+
     .outer-wrapper
-      ul.my-tab
-        li.selected
+      ul.tabs
+        li.tab.active
           a(href='#') 正在进行
-        li
+        li.tab
           a(href='#') 即将到来
-        li
+        li.tab
           a(href='#') 已经结束
 
       .inner-wrapper
@@ -21,11 +22,15 @@ template(name='contest_list')
   each contest_item in contest_items
     .contest-item
       .left-column
-        .num-of-participant
-          a(href='#')
-            div
-              i.fa.fa-user
-            div #{contest_item.num_of_participant}
+        .left-column-content.num
+          .num-of-participant
+            a(href='#')
+              div
+                i.fa.fa-user
+              div #{contest_item.num_of_participant}
+
+          .apply-area
+            a(href='#') 报名
 
       .middle-column
         .contest-title

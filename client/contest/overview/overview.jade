@@ -12,12 +12,12 @@ template(name='contest_overview')
       tbody
         each problem_item in problem_items
           tr
-            td
+            td.finish
               if problem_item.finish
-                img(src='images/contest/yes.gif')
+                i.fa.fa-check
             td #{problem_item.submit_num}
             td #{problem_item.title}
-            td
+            td.difficulty
               each i in problem_item.difficulty
                 i.fa.fa-star
             td #{problem_item.average_score}

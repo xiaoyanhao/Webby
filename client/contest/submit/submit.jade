@@ -1,0 +1,19 @@
+template(name='contest_submit')
+  .contest-submit
+    table.striped
+      thead
+        tr
+          th 标题
+          th 行数
+          th 提交时间
+
+      tbody
+        each submit_item in submit_items
+          tr
+            td #{submit_item.title}
+            td #{submit_item.length}
+            td
+              i.fa.fa-clock-o
+              span #{submit_item.time}
+
+

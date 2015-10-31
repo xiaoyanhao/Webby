@@ -1,14 +1,18 @@
 template(name='contest_layout')
   .contest-layout
+    .header
+      h4.contest-title Webby年度挑战赛
+
     .outer-wrapper
-      ul.my-tab
-        li.overview.selected
+      ul.tabs
+        li.overview.tab.active
           a(href='#') 概要
-        li.problem
-          a(href='#') 问题
-        li.rank
+        li.rank.tab
           a(href='#') 排名
+        li.submit.tab
+          a(href='#') 提交
 
       .inner-wrapper.overview
         +contest_overview
         +contest_rank
+        +contest_submit

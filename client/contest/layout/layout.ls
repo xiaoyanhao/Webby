@@ -1,20 +1,20 @@
 if Meteor.is-client
   Template['contest_layout'].events {
-    'click .my-tab a': !->
-      $ '.my-tab li' .remove-class 'selected'
-      $ event.target .parent! .add-class 'selected'
+    'click .tabs a': !->
+      $ '.tabs li' .remove-class 'active'
+      $ event.target .parent! .add-class 'active'
 
-      selected-li = $ 'li.selected'
+      active-li = $ 'li.active'
       inner-wrapper = $ '.inner-wrapper'
 
-      console.log selected-li
+      console.log active-li
 
-      inner-wrapper .remove-class 'overview problem rank'
+      inner-wrapper .remove-class 'overview submit rank'
 
       switch
-      | selected-li .has-class 'overview' => inner-wrapper.add-class 'overview'
-      | selected-li .has-class 'problem' => inner-wrapper.add-class 'problem'
-      | selected-li .has-class 'rank' => inner-wrapper.add-class 'rank'
+      | active-li .has-class 'overview' => inner-wrapper.add-class 'overview'
+      | active-li .has-class 'submit' => inner-wrapper.add-class 'submit'
+      | active-li .has-class 'rank' => inner-wrapper.add-class 'rank'
 
 
   }

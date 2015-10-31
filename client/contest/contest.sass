@@ -8,28 +8,10 @@
     .area-describe
       margin-left: 40px
 
-  .my-tab
-    margin-top: 25px
-    margin-bottom: 0
-    border-bottom: 2px #DDD solid
-    padding-left: 35px
-
-    li
-      display: inline-block
-      font-size: 15px
-      padding: 4px 12px
-      border: 2px #DDD solid
-      margin-right: -4px
-      margin-bottom: -1px
-
-    li a
-      color: black
-
-    li:not(.selected)
-      background-color: #EEE
-
-    .selected
-      border-bottom: 2px white solid
+  .tabs
+    width: 70% !important
+    margin: 5%
+    margin-bottom: 2%
 
   .outer-wrapper
     width: 80%
@@ -69,16 +51,27 @@
   .right-column
     padding-top: 5px
 
-  .num-of-participant
+  .left-column-content
     width: 50px
+    height: 50px
     padding-top: 3px
     padding-bottom: 3px
     background-color: #DF696E
     color: white
     margin: 10px auto
+    overflow: hidden
 
     a
       color: white
+
+  .num-of-participant, .apply-area
+    display: none
+
+  .num .num-of-participant, .apply .apply-area
+    display: block
+
+  .apply-area
+    margin-top: 12px
 
   .author-info
     color: #999999
