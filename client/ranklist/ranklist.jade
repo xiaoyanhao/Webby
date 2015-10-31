@@ -9,7 +9,8 @@
 template(name="webby_ranklist")
   //- +webby_navbar
   .webby-ranklist.main-container.collapsed
-    .row
+    +webby_topbar(title='排行榜')
+    .row.ranklist-main
       .col.s12
         +webby_ranklist_personal
         +webby_ranklist_container
