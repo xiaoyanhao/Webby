@@ -1,12 +1,11 @@
 template(name='webby_answer')
   .webby-answer.main-container.collapsed
+    +webby_topbar(title='环形菜单')
     +webby_answer_problem
     +webby_answer_footer
 
 template(name='webby_answer_problem')
   .webby-answer-problem
-    +webby_topbar(title='环形菜单')
-
     .container
       .problem.row
         +webby_answer_votezone
@@ -41,7 +40,7 @@ template(name='webby_answer_votezone')
 template(name='webby_answer_mysolution')
   .webby-answer-mysolution
     .row
-      h2.theme-color 我的回答
+      h3.theme-color 我的回答
       .col.offset-s1.s11.z-depth-1.my-solution
         .col.s12
           ul.tabs
@@ -74,7 +73,7 @@ template(name='webby_answer_solutions')
     .answer-zone
       .row
         .subject.col.s12
-          h2.theme-color 16个回答
+          h3.theme-color 16个回答
 
         +webby_answer_votezone
 
@@ -133,13 +132,13 @@ template(name='webby_answer_footer')
             .white-text Links
             ul
               li
-                a.grey-text.text-lighten-3(href="#!") Link 1
+                a.grey-text.text-lighten-3(href="#!") Github
               li
-                a.grey-text.text-lighten-3(href="#!") Link 2
+                a.grey-text.text-lighten-3(href="#!") segmentfault
               li
-                a.grey-text.text-lighten-3(href="#!") Link 3
+                a.grey-text.text-lighten-3(href="#!") Codepen
               li
-                a.grey-text.text-lighten-3(href="#!") Link 4
+                a.grey-text.text-lighten-3(href="#!") CodeMirror
 
       .footer-copyright
         .container.valign-wrapper

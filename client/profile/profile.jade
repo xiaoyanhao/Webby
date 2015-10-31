@@ -1,12 +1,8 @@
-template(name="profile")
-  +webby_topbar(title="My Profile")
-  +webby_sidebar
-  +webby_profile
 
 template(name="webby_profile")
-  //- .banner My Profile
   .webby-profile.main-container.collapsed
-    .row
+    +webby_topbar(title="My Profile")
+    .row.webby-profile-container
       .user-info.z-depth-2.col.s11
         +user_info
       .user-answers-and-questions.col.s11
