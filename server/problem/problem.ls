@@ -20,6 +20,27 @@ if Problems.find!.count! is 0
     cover: "images/problem3.jpg",
     classification: "JavaScript"
   }
+  Problems.insert {
+    title: "Sass进阶篇",
+    tips: "Sass使你摆脱重复编写css代码的工作。",
+    number: 509,
+    cover: "images/problem4.jpg",
+    classification: "Sass"
+  }
+  Problems.insert {
+    title: "七夕言情",
+    tips: "为七夕节准备的HTML5+JS+CSS3特效案例",
+    number: 1300,
+    cover: "images/problem5.jpg",
+    classification: "CSS3"
+  }
+  Problems.insert {
+    title: "Tooltip",
+    tips: "使用HTML5技术制作一个漂亮的SVG气泡",
+    number: 822,
+    cover: "images/problem6.jpg",
+    classification: "HTML5"
+  }
 
 Meteor.publish "problems", ->
   return Problems.find!
