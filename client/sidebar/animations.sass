@@ -1,0 +1,75 @@
+.webby-sidebar.initial
+  .side-nav
+    height: 0
+    animation: sidebar_dropdown 1s linear
+    animation-fill-mode: forwards
+    li
+      animation: sidebar_item_slide_out 1s 1s
+      animation-fill-mode: backwards
+    .index
+      .logo
+        animation: logo_showup 1s 2s
+        animation-fill-mode: backwards
+      .name
+        animation: name_showup 1s 2s
+        animation-fill-mode: backwards
+      .collapse-sidebar
+        animation: collapsed_button_showup 1s 2s
+        animation-fill-mode: backwards
+    .profile, .problem, .contest, .ranklist, .career, .signin, .signout
+      .fa
+        animation: sidebar_icon_showup 1s 3s
+        animation-fill-mode: backwards
+      span
+        animation: sidebar_icon_text_showup 1s 4s
+        animation-fill-mode: backwards
+
+
+
+@keyframes sidebar_dropdown
+  0%
+    height: 0
+  100%
+    height: 100%
+
+@keyframes sidebar_item_slide_out
+  0%
+    width: 0
+    padding: 0
+  100%
+    width: 100%
+
+@keyframes logo_showup
+  0%
+    opacity: 0
+    transform: rotateY(360deg)
+  100%
+    opacity: 1
+
+@keyframes name_showup
+  0%
+    opacity: 0
+    transform: rotateX(720deg)
+  100%
+    opacity: 1
+
+@keyframes collapsed_button_showup
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes sidebar_icon_showup
+  0%
+    opacity: 0
+    transform: rotate(360deg)
+  100%
+    opacity: 1
+
+@keyframes sidebar_icon_text_showup
+  0%
+    opacity: 0
+    margin-left: 0
+  100%
+    opacity: 1
+    margin-left: 18px

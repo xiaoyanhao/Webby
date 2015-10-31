@@ -10,9 +10,9 @@ Template.webby_sidebar.on-created !->
       name: 'sidebar'
       dom: '.webby-sidebar'
       runtime:
-        initial-state: 'expanded'
+        initial-state: 'initial expanded'
         transitions:
-          'expanded -> collapsed':
+          'expanded,initial -> collapsed':
             'click':
               'selector': '#webby-sidebar .collapse-sidebar'
               'action': @expand-main-container
