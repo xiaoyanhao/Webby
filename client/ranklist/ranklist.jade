@@ -7,7 +7,6 @@
 
 
 template(name="webby_ranklist")
-  //- +webby_navbar
   .webby-ranklist.main-container.collapsed
     +webby_topbar(title='排行榜')
     .row.ranklist-main
@@ -18,7 +17,8 @@ template(name="webby_ranklist")
 template(name="webby_ranklist_personal")
   .ranklist-personal.card-panel.col.s10
     .ranklist-personal-avatar.col.s2
-      img.circle.responsive-img(src="#{personal_info.avatar}" alt="")
+      a(href='/profile')
+        img.circle.responsive-img(src="#{personal_info.avatar}" alt="")
     .ranklist-personal-level.col.s2
       ul
         li.username #{personal_info.username}
@@ -53,7 +53,7 @@ template(name="webby_ranklist_container")
           th.personalInfo(data-field="personal-info") 个人介绍
           th.problemnum(data-field="problemnum") 解题数
           th.grade(data-field="grade") 总积分
-      tbody
+      tbody.ranklist-tbody
         each ranklist_item in ranklist_items
           tr
             td.userrank #{ranklist_item.place}

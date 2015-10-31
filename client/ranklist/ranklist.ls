@@ -1,10 +1,10 @@
 fake-data = 
  *place: '1',
-  username: 'zhangsan',
-  personal-info: 'xxxxxxxxxxxssssssss',
+  username: '肖总',
+  personal-info: 'webby is great',
   problemnum:'32',
   grade: '300',
-  avatar: "images/default01.png"
+  avatar: "images/zerg.jpg"
 
  *place: '2',
   username: 'lisi',
@@ -44,7 +44,7 @@ fake-data =
 
 
 if Meteor.is-client
-
+  
   Template['webby_ranklist_container'].helpers {
 
     ranklist_items: ->
@@ -58,13 +58,21 @@ if Meteor.is-client
       personal_info = []
       personal_info.push {
         place: '1'
-        avatar: "images/default01.png"
-        username : 'zhangsan'
+        avatar: "/images/zerg.jpg"
+        username : '肖总'
         problemnum:'32'
         grade: '300'
       }
-      # console.log personal_info
+
       personal_info[0]
   }
+
+  Template['webby_ranklist_container']on-rendered !->
+    $('.ranklist-tbody tr:first-child') .click !->
+      location.assign '/profile'
+
+
+
+
 
 
