@@ -29,4 +29,15 @@ git push origin master
 ```
 
 
+### 文件目录结构
+```
+.
+├── client                客户端代码，包含各页面jade、sass、ls文件
+├── lib
+    ├── collections.ls    collections声明
+    └── router.ls         router声明
+├── public                静态资源文件
+└── server                服务端代码，包含数据插入等
 
+    
+```
