@@ -1,3 +1,33 @@
 template(name='webby_home')
-  .webby-home
-    +webby_sidebar
+  +webby_sidebar
+  .webby-home.main-container
+    +webby_topbar(title='前端开发专业化评测平台')
+    +webby_home_index
+    .fixed-action-btn
+      a.btn-floating.btn-large.waves-effect.waves-light.red.accent-2
+        i.fa.fa-chevron-down
+
+template(name='webby_home_index')
+  .webby-home-index
+    .slider.white
+      ul.slides
+        li.slide_problem
+          img(src='/images/slide_problem.png' alt='题目库')
+          .caption.right-align
+            h3 海量题目
+            h5.light.grey-text.text-lighten-3 等你来战！
+        li.slide_contest
+          img(src='/images/slide_contest.png' alt='竞赛区')
+          .caption.right-align
+            h3 限时竞赛
+            h5.light.grey-text.text-lighten-3 快速开发，胜者为王。
+        li.slide_ranklist
+          img(src='/images/slide_ranklist.png' alt='排行榜')
+          .caption.left-align
+            h3 茫茫前端开发者
+            h5.light.grey-text.text-lighten-3 你，在什么位置？
+        li.slide_career
+          img(src='/images/slide_career.png' alt='职业场')
+          .caption.center-align
+            h3 工作机会
+            h5.light.grey-text.text-lighten-3 只要你足够优秀，定有伯乐青睐。

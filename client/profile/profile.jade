@@ -1,10 +1,11 @@
 template(name="profile")
+  +webby_topbar(title="My Profile")
   +webby_sidebar
   +webby_profile
 
 template(name="webby_profile")
-  .banner My Profile
-  .webby-profile
+  //- .banner My Profile
+  .webby-profile.main-container.collapsed
     .row
       .user-info.z-depth-2.col.s11
         +user_info
@@ -14,10 +15,11 @@ template(name="webby_profile")
 
 template(name="user_info")
   .row
-    .col.s4.avatar-area
-      img.avatar(src="/images/zerg.jpg")
-      .upload-avatar 点击上传
-      .badges 暂无头衔
+    .col.s4.profile-area
+      .avatar-area
+        img.avatar(src="/images/zerg.jpg")
+        .upload-avatar 点击上传
+        .badges 暂无头衔
       canvas#myGrowth
     .col.s6
       form

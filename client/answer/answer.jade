@@ -1,0 +1,150 @@
+template(name='webby_answer')
+  .webby-answer.main-container.collapsed
+    +webby_answer_problem
+    +webby_answer_footer
+
+template(name='webby_answer_problem')
+  .webby-answer-problem
+    +webby_topbar(title='环形菜单')
+    //- .top-nav
+    //-   .container.valign-wrapper
+    //-     .valign
+    //-       a 环形菜单
+
+    .container
+      .problem.row
+        +webby_answer_votezone
+
+        .col.s11
+          .card.grey.lighten-5
+            .card-content.black-text.text-darken-5
+              span.card-title.black-text.text-darken-5 要求
+              p.flow-text @+环形菜单出现在页面下部，靠近底边，居中其关闭时（鼠标未指向），只显示缩小的@+按钮。鼠标指向之后，显示出环形菜单，包括5个控制按钮和一个信息栏（info-bar）。颜色：按钮蓝色：rgba(48, 63, 159, 1)；绿色字体：#079E6E；各种灰色，请自行用rgba来调整。
+
+          .card.grey.lighten-5
+            .card-content.black-text.text-darken-5
+              span.card-title.black-text.text-darken-5 效果
+
+            video.responsive-video(controls)
+              source(src="at-plus.mov" type="video/mp4")
+
+        .s12.right-align
+          .chip 2015年10月17日
+
+      +webby_answer_mysolution
+      +webby_answer_solutions
+
+template(name='webby_answer_votezone')
+  .webby-answer-votezone
+    .vote-zone.col.s1.center-align
+      i.medium.material-icons.upvote play_arrow
+      .chip +10
+      i.medium.material-icons.downvote play_arrow
+      i.medium.material-icons grade
+
+template(name='webby_answer_mysolution')
+  .webby-answer-mysolution
+    .row
+      h2.theme-color 我的回答
+      .col.offset-s1.s11.z-depth-1.my-solution
+        .col.s12
+          ul.tabs
+            li.tab.col.s3
+              a.active(href="#editor-html") HTML
+            li.tab.col.s3
+              a(href="#editor-css") CSS
+            li.tab.col.s3
+              a(href="#editor-js") JavaScript
+            li.tab.col.s3.preview
+              a(href="#preview") 预览
+
+        #editor-html.col.s12
+          +EditorPage(mode='1' idName='html')
+
+        #editor-css.col.s12
+          +EditorPage(mode='2' idName='css')
+
+        #editor-js.col.s12
+          +EditorPage(mode='3' idName='javascript')
+
+        #preview.col.s12
+          
+        .my-sulotion-footer
+          a.btn.waves-effect.waves-light.submit 提交
+          i.medium.material-icons.full-screen.theme-color.modal-trigger(data-target="modal1" ) aspect_ratio
+
+template(name='webby_answer_solutions')
+  .webby-answer-solutions
+    .answer-zone
+      .row
+        .subject.col.s12
+          h2.theme-color 16个回答
+
+        +webby_answer_votezone
+
+        .col.s11.z-depth-1.production-code-discuss
+          .col.s6
+            ul.tabs
+              li.tab.col.s2
+                a(href="#test1") 效果
+              li.tab.col.s2
+                a(href="#test2") 代码
+              li.tab.col.s2
+                a.active(href="#test4") 讨论
+
+          #test1.col.s12
+            p Your browser does not support iframes.
+
+          #test2.col.s12
+
+          #test4.col.s12
+            .discuss
+              each discussData
+                .col.s10
+                  .card-panel.grey.lighten-5.z-depth-1
+                    .row.valign-wrapper
+                      .col.s2
+                        img.round-img(src="#{src}" alt="")
+
+                      .col.s10
+                        span.black-text
+                          | #{comment}
+
+            .input-field
+              .col.s10
+                i.material-icons.prefix mode_edit
+                input.validate#last_name(type="text")
+                label(for="last_name") 发言
+
+              a.waves-effect.waves-light.btn 发送
+
+    .load-more
+      a.waves-effect.waves-teal.btn 加载更多
+
+template(name='EditorPage')
+  +CodeMirror(id=idname options=editorOptions code=editorCode name='sublime')
+
+template(name='webby_answer_footer')
+  .webby-answer-footer
+    footer.page-footer
+      .container
+        .row
+          .col.l6.s12
+            h5.white-text Webby
+            p.grey-text.text-lighten-4 前端开发者的开放性社区
+
+          .col.l4.offset-l2.s12
+            .white-text Links
+            ul
+              li
+                a.grey-text.text-lighten-3(href="#!") Link 1
+              li
+                a.grey-text.text-lighten-3(href="#!") Link 2
+              li
+                a.grey-text.text-lighten-3(href="#!") Link 3
+              li
+                a.grey-text.text-lighten-3(href="#!") Link 4
+
+      .footer-copyright
+        .container.valign-wrapper
+          p.valign © 2015 Copyright Inception

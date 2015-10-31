@@ -12,21 +12,34 @@
         margin-left: 18px
 
     .index
-      .collapse-sidebar, .expand-sidebar
+      padding: 0
+      .expanded-index, .collapsed-index
         position: relative
-        height: 20px
-        a
+        height: 100px
+        .logo
+          background-image: url('/images/w_logo.svg')
+          background-size: 100% 100%
+          background-position: center
+          transition: all 0.5s
+          -o-transition: all 0.5s
+          -ms-transition: all 0.5s
+          -moz-transition: all 0.5s
+          -webkit-transition: all 0.5s
+          &:hover
+            background-color: white
+            border-radius: 50%
+        .expand-sidebar, .collapse-sidebar
           position: absolute
+          bottom: 0
           right: 0
-          top: 0
-          height: 100%
-          width: 50px
-          background-color: rgba(255, 255, 255, 0.4)
-          padding: 0
+          height: 28px
+          line-height: 28px
+          background-color: rgba(255, 255, 255, 0.3)
+          text-align: center
           .fa
-            float: left
-            margin-left: 20px
             color: white
+            font-size: 15px
+            line-height: 15px
 
     .signin .fa::before
         color: #673ab7
@@ -61,27 +74,37 @@
 
   &.expanded
     .side-nav
-      .expanded-index
-        .name
-          margin: 0
-          text-align: right
-        .summary
-          margin: 10px 0
-          text-align: right
-          color: black
-      .collapsed-index
-        display: none
+      .index
+        .expanded-index
+          .collapse-sidebar
+            width: 32px
+          .logo
+            margin: 0 15px
+            float: left
+            width: 64px
+            height: 64px
+          .name
+            float: left
+
+        .collapsed-index
+          display: none
 
   &.collapsed
     .side-nav
       width: 50px !important
-      transition: width 0.3s
+      // transition: width 0.3s
       li
         padding: 0
         span
           display: none
       .index
-        .expand-sidebar a
-            width: 100%
+        .collapsed-index
+          padding-top: 20px
+          .logo
+            width: 32px
+            height: 32px
+            margin: 0px auto
+          .expand-sidebar
+              width: 100%
         .expanded-index
           display: none
