@@ -1,0 +1,7 @@
+*~
+.*
+!.gitignore
+.*/
+bin/
+node_modules/
+*.log
