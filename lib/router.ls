@@ -1,6 +1,6 @@
 
 Router.route '/', !->
-  @render 'webby_answer'
+  @render 'webby_home'
 
 Router.route '/problem', !->
   @render 'webby_problem'
@@ -14,4 +14,5 @@ Router.route '/test_contest', !->
 Router.route '/ranklist', !-> 
   @render 'webby_ranklist'
 
-
+Router.route '/problem/problemId', !->
+  @render 'webby_answer'
