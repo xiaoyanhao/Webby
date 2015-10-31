@@ -2,19 +2,43 @@ html, body
   width: 100%
   height: 100%
 
-<<<<<<< HEAD
   .main-container
     padding-left: 240px
-=======
+
+    &.expanded
+      padding-left: 50px
+      transition: padding-left 0.2s
+    &.collapsed
+      padding-left: 240px
+      transition: padding-left 0.2s
+
+  &.initial
+    .main-container
+      animation: main_container_showup 1s 1s
+      animation-fill-mode: backwards
+
+      // .webby-topbar
+      //   .page-title
+      //     animation: page_title_showup 1s 2s
+      //     animation-fill-mode: forwards
+
+
+
 .theme-color
   color: #EE6E73 !important
 
 
-.main-container
-  &.expanded
-    padding-left: 50px
-    transition: padding-left 0.2s
-  &.collapsed
-    padding-left: 240px
-    transition: padding-left 0.2s
->>>>>>> ab79b755deda558afd6cea60dcdc552a4827bb05
+@keyframes main_container_showup
+  0%
+    opacity: 0
+    transform: translateX(100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+// @keyframes page_title_showup
+//   0%
+//     opacity: 0
+//     transform: rotateX(720deg)
+//   100%
+//     opacity: 1
