@@ -68,33 +68,23 @@ Template['webby_answer_mysolution'].events do
     js = $("\#javascript").val()
 
     css = '.my-answer ' + css 
-    css1 = css.replace /}/ig, '} .my-answer '
-    css2 = css.replace /\n/ig, ''
-    css3 = css2.replace /\t/ig, ''
-
-    console.log css
-    console.log css1
-    console.log css2
-    console.log css3
-
-
-    # console.log html, css, js
+    css = css.replace /}/ig, '} .my-answer '
 
     div = document.createElement("div")
     div.className = 'my-answer'
     div.innerHTML = html
 
-    console.log div
+    # console.log div
 
     style = document.createElement("style")
-    style.innerHTML = css1
+    style.innerHTML = css
 
-    console.log style
+    # console.log style
 
     script = document.createElement("script")
     script.innerHTML = js
 
-    console.log script
+    # console.log script
     
     preview.append div
     preview.append style
