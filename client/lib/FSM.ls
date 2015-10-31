@@ -8,10 +8,11 @@ class @FSM
 
     @activate-machine!
 
-  create-transition: (from-state, to-state)~>
+  create-transition: (from-state, to-state, action)~>
     !~>
       @dom .remove-class from-state
       @dom .add-class to-state
+      action!
 
   activate-machine: !->
     @dom .add-class @runtime.initial-state
@@ -21,5 +22,6 @@ class @FSM
       from-states = from-to[0].split ','
       to-state = from-to[1]
       for from-state in from-states
-        for event, selector of events
-          $ selector .bind event, @create-transition from-state, to-state
+        for event-name, event-obj of events
+          console.log event-name, event-obj
+          $ event-obj['selector'] .bind event-name, (@create-transition from-state, to-state, event-obj['action'])
