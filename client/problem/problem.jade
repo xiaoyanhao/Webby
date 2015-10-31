@@ -51,10 +51,11 @@ template(name='webby_problem_body')
 			ul
 				each problems
 					li.webby-problem-item
-						img.cover(src=cover)
-						p.title {{title}}
-						p.tips {{tips}}
-						p.number {{number}}人通过
+						a(href='/answer/ring-menu')
+							img.cover(src=cover)
+							p.title {{title}}
+							p.tips {{tips}}
+							p.number {{number}}人通过
 		//- 页码
 
 		.webby-problem-pagination

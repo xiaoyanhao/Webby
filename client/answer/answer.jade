@@ -6,10 +6,6 @@ template(name='webby_answer')
 template(name='webby_answer_problem')
   .webby-answer-problem
     +webby_topbar(title='环形菜单')
-    //- .top-nav
-    //-   .container.valign-wrapper
-    //-     .valign
-    //-       a 环形菜单
 
     .container
       .problem.row
@@ -26,7 +22,7 @@ template(name='webby_answer_problem')
               span.card-title.black-text.text-darken-5 效果
 
             video.responsive-video(controls)
-              source(src="at-plus.mov" type="video/mp4")
+              source(src="/at-plus.mov" type="video/mp4")
 
         .s12.right-align
           .chip 2015年10月17日
@@ -67,7 +63,7 @@ template(name='webby_answer_mysolution')
         #editor-js.col.s12
           +EditorPage(mode='3' idName='javascript')
 
-        #preview.col.s12
+        #preview.col.s12.z-depth-1
           
         .my-sulotion-footer
           a.btn.waves-effect.waves-light.submit 提交
