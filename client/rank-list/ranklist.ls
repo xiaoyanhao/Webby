@@ -57,9 +57,14 @@ if Meteor.is-client
     personal_info: ->
       personal_info = []
       personal_info.push {
+        place: '1'
         avatar: "images/default01.png"
         username : 'zhangsan'
+        problemnum:'32'
+        grade: '300'
       }
       # console.log personal_info
       personal_info[0]
   }
+
+
