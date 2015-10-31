@@ -32,10 +32,13 @@ template(name='webby_answer_problem')
 template(name='webby_answer_votezone')
   .webby-answer-votezone
     .vote-zone.col.s1.center-align
-      i.medium.material-icons.upvote play_arrow
+      //- i.medium.material-icons.upvote play_arrow
+      //- i.medium.material-icons.downvote play_arrow
+
+      i.fa.fa-play.upvote
       .chip +10
-      i.medium.material-icons.downvote play_arrow
-      i.medium.material-icons grade
+      i.fa.fa-play.downvote
+      i.fa.fa-star.collect
 
 template(name='webby_answer_mysolution')
   .webby-answer-mysolution

@@ -63,9 +63,9 @@ Template['webby_answer_mysolution'].events do
     preview = Template.instance().$("\#preview")
     preview.children!remove!
     
-    html = $("\#html").val()
-    css = $("\#css").val()
-    js = $("\#javascript").val()
+    html = $("\#html").val!
+    css = $("\#css").val!
+    js = $("\#javascript").val!
 
     css = '.my-answer ' + css 
     css = css.replace /}/ig, '} .my-answer '
