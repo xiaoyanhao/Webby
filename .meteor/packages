@@ -24,3 +24,5 @@ fortawesome:fontawesome
 accounts-password
 reactive-var
 iron:router
+perak:codemirror
+

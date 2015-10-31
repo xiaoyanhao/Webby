@@ -8,7 +8,7 @@
 
 template(name="webby_ranklist")
   //- +webby_navbar
-  .webby-ranklist
+  .webby-ranklist.main-container.collapsed
     .row
       .col.s12
         +webby_ranklist_personal
@@ -17,10 +17,10 @@ template(name="webby_ranklist")
 template(name="webby_ranklist_personal")
   .ranklist-personal.card-panel.col.s10
     .ranklist-personal-avatar.col.s2
-      img.circle.responsive-img(src="/images/default01.png" alt="")
+      img.circle.responsive-img(src="#{personal_info.avatar}" alt="")
     .ranklist-personal-level.col.s2
       ul
-        li.username zhangsan
+        li.username #{personal_info.username}
         li.userlevel.chip
           i.fa.fa-vimeo 
           span level 7
@@ -58,7 +58,7 @@ template(name="webby_ranklist_container")
             td.userrank #{ranklist_item.place}
             td 
               .avatar
-                img.circle.responsive-img(scr="#{ranklist_item.avatar}" alt="")
+                img.circle.responsive-img(src="#{ranklist_item.avatar}" alt="")
               .username #{ranklist_item.username}
 
             td #{ranklist_item.personalInfo}
