@@ -27,6 +27,3 @@ git add -A
 git commit -m 'your comment'
 git push origin master
 ```
-
-
-

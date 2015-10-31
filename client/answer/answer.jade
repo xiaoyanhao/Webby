@@ -1,14 +1,16 @@
 template(name='webby_answer')
-  .webby-answer
+  .webby-answer.main-container
+    +webby_topbar(title='环形菜单')
     +webby_answer_problem
     +webby_answer_footer
 
 template(name='webby_answer_problem')
   .webby-answer-problem
-    .top-nav
-      .container.valign-wrapper
-        .valign
-          a 环形菜单
+    +webby_topbar(title='环形菜单')
+    //- .top-nav
+    //-   .container.valign-wrapper
+    //-     .valign
+    //-       a 环形菜单
 
     .container
       .problem.row
