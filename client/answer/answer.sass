@@ -15,20 +15,30 @@
   .vote-zone
     padding: 0
     margin-top: 20px
-    .material-icons
-      color: #FF5252
-      font-size: 46px
+    
     .chip
       margin-right: auto
       margin-left: auto
+      margin-bottom: 10px
+
+    i
+      color: rgb(170, 170, 170)
+      margin-bottom: 10px
+
+    i:hover
+      cursor: pointer
+      color: #FF5252 
+
+    .upvote
+      font-size: 40px
+      transform: rotate(-90deg)
+
+    .downvote
+      font-size: 40px
+      transform: rotate(90deg)
+
     .collect
-      margin-right: 4px !important
-
-  .upvote
-    transform: rotate(-90deg)
-
-  .downvote
-    transform: rotate(90deg)
+      font-size: 45px
 
 .webby-answer-solutions
   .answer-zone
