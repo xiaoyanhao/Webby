@@ -4,7 +4,7 @@
 
 ### 部署与运行
 
-```javascript
+```bash
 git clone https://github.com/xiaoyanhao/Webby.git
 cd webby
 meteor
@@ -16,13 +16,13 @@ meteor
 
 每次开发前，或者每次提交前，都要先跟远程仓库同步。
 
-```javascrpit
+```bash
 git pull origin master
 ```
 
 然后提交
 
-```javascript
+```bash
 git add -A
 git commit -m 'your comment'
 git push origin master
