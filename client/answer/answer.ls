@@ -38,9 +38,8 @@ Template['EditorPage'].helpers do
       mode: mode
 
   editorCode: ->
-    "Code to show in editor"
+    "Talk is cheap, show me the code!"
 
 Template['webby_answer_mysolution'].events do
   'click .full-screen': !->
-    # console.log cm
     Template.instance!.$('.webby-answer-mysolution').toggle-class 'my-solution-full-screen'
