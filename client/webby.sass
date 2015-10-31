@@ -3,4 +3,13 @@ html, body
   height: 100%
 
 .theme-color
-  color: #EE6E73
+  color: #EE6E73 !important
+
+
+.main-container
+  &.expanded
+    padding-left: 50px
+    transition: padding-left 0.2s
+  &.collapsed
+    padding-left: 240px
+    transition: padding-left 0.2s

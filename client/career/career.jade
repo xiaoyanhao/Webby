@@ -1,0 +1,30 @@
+
+template(name='webby_career')
+  .webby-career.main-container.collapsed
+    +webby_topbar(title='职业场')
+    +webby_career_content
+
+
+template(name='webby_career_content')
+  .webby-carreer-content
+    .row
+      each fakeData
+        +webby_career_content_item
+
+template(name='webby_career_content_item')
+  .webby-career-content-item
+    .col.s3
+      .card
+        .card-image
+          img(src="career/#{img}")
+          span.card-title #{company}
+
+        .card-content
+          span.position.teal-text.text-accent-4 #{position} 
+          span.wage.orange-text.text-darken-2 #{wage} 
+          span.require.cyan-text.text-lighten-2 #{require}
+          span.education.cyan-text.text-lighten-2 #{education}
+
+        .card-action
+          a(href="#") 详情
+          a(href='#') #{company}

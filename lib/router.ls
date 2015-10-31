@@ -16,6 +16,9 @@ Router.route '/test_contest', !->
 
 Router.route '/ranklist', !->
   @render 'webby_ranklist'
+
+Router.route '/career', !->
+  @render 'webby_career'
   
 Router.route '/answer/:problemid', !->
   problemid = @params.problemid
