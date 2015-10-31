@@ -2,8 +2,8 @@
 template(name="webby_profile")
   .webby-profile.main-container.collapsed
     +webby_topbar(title="个人信息")
-    .row
-      .user-info.z-depth-2.col.s11
+    .row.webby-profile-container
+      .user-info.z-depth-2.col.s12
         +user_info
       .user-answers-and-questions.col.s12
         +questions_and_answers

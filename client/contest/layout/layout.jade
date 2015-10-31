@@ -1,7 +1,9 @@
 template(name='contest_layout')
   .contest-layout.main-container.collapsed
-    .header
-      h4.contest-title Webby年度挑战赛
+    +webby_topbar(title='Webby年度挑战赛')
+    //- .header
+      //- h4.contest-title Webby年度挑战赛
+
 
     .outer-wrapper
       ul.tabs

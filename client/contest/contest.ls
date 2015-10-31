@@ -29,23 +29,26 @@ contest-data =
     end_time: '2015-12-06 18:30'
 
 
-if Meteor.is-client
-  Template['contest_list'].helpers {
-    contest_items: -> contest-data
-  }
 
-  Template['webby_contest'].events {
-    'click .my-tab a': (event)!->
-      $ '.my-tab li' .remove-class 'selected'
-      $ event.target .parent! .add-class 'selected'
+Template['webby_contest'].on-rendered !->
+  @.$('ul.tabs').tabs!
 
-    'click .pagination li': (event)!->
-      $ '.pagination li' .remove-class 'active'
-      $ event.target .add-class 'active'
+Template['contest_list'].helpers {
+  contest_items: -> contest-data
+}
 
-    'mouseenter .left-column-content': !->
-      $ event.target .remove-class 'num' .add-class 'apply'
+Template['webby_contest'].events {
+  'click .my-tab a': (event)!->
+    $ '.my-tab li' .remove-class 'selected'
+    $ event.target .parent! .add-class 'selected'
 
-    'mouseleave .left-column-content': !->
-      $ event.target .remove-class 'apply' .add-class 'num'
-  }
+  'click .pagination li': (event)!->
+    $ '.pagination li' .remove-class 'active'
+    $ event.target .add-class 'active'
+
+  'mouseenter .left-column-content': !->
+    $ event.target .remove-class 'num' .add-class 'apply'
+
+  'mouseleave .left-column-content': !->
+    $ event.target .remove-class 'apply' .add-class 'num'
+}
