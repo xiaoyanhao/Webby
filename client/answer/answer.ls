@@ -90,6 +90,3 @@ Template['webby_answer_mysolution'].events do
     preview.append style
     preview.append script
 
-
-
-
