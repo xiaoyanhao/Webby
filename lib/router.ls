@@ -17,6 +17,10 @@ Router.route '/test_contest', !->
 Router.route '/ranklist', !->
   @render 'webby_ranklist'
 
-Router.route '/problem/problemId', !->
-  @render 'webby_answer'
-
+Router.route '/career', !->
+  @render 'webby_career'
+  
+Router.route '/answer/:problemid', !->
+  problemid = @params.problemid
+  console.log problemid
+  @render 'webby_answer', {data: problemid}

@@ -1,16 +1,11 @@
 template(name='webby_answer')
   .webby-answer.main-container.collapsed
+    +webby_topbar(title='环形菜单')
     +webby_answer_problem
     +webby_answer_footer
 
 template(name='webby_answer_problem')
   .webby-answer-problem
-    +webby_topbar(title='环形菜单')
-    //- .top-nav
-    //-   .container.valign-wrapper
-    //-     .valign
-    //-       a 环形菜单
-
     .container
       .problem.row
         +webby_answer_votezone
@@ -26,7 +21,7 @@ template(name='webby_answer_problem')
               span.card-title.black-text.text-darken-5 效果
 
             video.responsive-video(controls)
-              source(src="at-plus.mov" type="video/mp4")
+              source(src="/at-plus.mov" type="video/mp4")
 
         .s12.right-align
           .chip 2015年10月17日
@@ -45,7 +40,7 @@ template(name='webby_answer_votezone')
 template(name='webby_answer_mysolution')
   .webby-answer-mysolution
     .row
-      h2.theme-color 我的回答
+      h3.theme-color 我的回答
       .col.offset-s1.s11.z-depth-1.my-solution
         .col.s12
           ul.tabs
@@ -67,7 +62,7 @@ template(name='webby_answer_mysolution')
         #editor-js.col.s12
           +EditorPage(mode='3' idName='javascript')
 
-        #preview.col.s12
+        #preview.col.s12.z-depth-1
           
         .my-sulotion-footer
           a.btn.waves-effect.waves-light.submit 提交
@@ -78,7 +73,7 @@ template(name='webby_answer_solutions')
     .answer-zone
       .row
         .subject.col.s12
-          h2.theme-color 16个回答
+          h3.theme-color 16个回答
 
         +webby_answer_votezone
 
@@ -86,18 +81,20 @@ template(name='webby_answer_solutions')
           .col.s6
             ul.tabs
               li.tab.col.s2
-                a(href="#test1") 效果
+                a(href="#effect") 效果
               li.tab.col.s2
-                a(href="#test2") 代码
+                a(href="#code") 代码
               li.tab.col.s2
-                a.active(href="#test4") 讨论
+                a.active(href="#discuss") 讨论
 
-          #test1.col.s12
-            p Your browser does not support iframes.
+          #effect.col.s12
+            iframe(src='/at-plus/bin/index.html' allowfullscreen="allowfullscreen" frameborder="0")
+              p Your browser does not support iframes.
 
-          #test2.col.s12
+          #code.col.s12
+            <iframe width="100%" height="300" src="//jsfiddle.net/wujiarong/hfqcgq2g/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-          #test4.col.s12
+          #discuss.col.s12
             .discuss
               each discussData
                 .col.s10
@@ -137,13 +134,13 @@ template(name='webby_answer_footer')
             .white-text Links
             ul
               li
-                a.grey-text.text-lighten-3(href="#!") Link 1
+                a.grey-text.text-lighten-3(href="#!") Github
               li
-                a.grey-text.text-lighten-3(href="#!") Link 2
+                a.grey-text.text-lighten-3(href="#!") segmentfault
               li
-                a.grey-text.text-lighten-3(href="#!") Link 3
+                a.grey-text.text-lighten-3(href="#!") Codepen
               li
-                a.grey-text.text-lighten-3(href="#!") Link 4
+                a.grey-text.text-lighten-3(href="#!") CodeMirror
 
       .footer-copyright
         .container.valign-wrapper

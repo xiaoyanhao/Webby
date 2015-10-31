@@ -53,7 +53,7 @@ Template['EditorPage'].helpers do
       # '(function() {
       #   alert("webby is good!");
       # })()'
-      "Talk is cheap, show me the code!"
+      "// Talk is cheap, show me the code!"
 
 Template['webby_answer_mysolution'].events do
   'click .full-screen': !->
@@ -89,7 +89,4 @@ Template['webby_answer_mysolution'].events do
     preview.append div
     preview.append style
     preview.append script
-
-
-
 
