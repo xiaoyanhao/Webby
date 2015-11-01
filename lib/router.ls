@@ -19,6 +19,10 @@ Router.route '/ranklist', !->
 
 Router.route '/career', !->
   @render 'webby_career'
+
+Router.route '/signout', !->
+  @render 'webby_home'
+
   
 Router.route '/answer/:problemid', !->
   problemid = @params.problemid

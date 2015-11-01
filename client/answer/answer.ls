@@ -39,16 +39,9 @@ Template['EditorPage'].helpers do
   editorCode: ->
     console.log @
     if @idName is "html"
-      '<div><p> </p></div>'
+      ''
     else if @idName is 'css'
-      'div {
-        width: 100px;
-        height: 100px;
-        background: blue;
-      }
-      p {
-        font-size: 20px
-      }'
+      ''
     else if @idName is 'javascript'
       # '(function() {
       #   alert("webby is good!");
